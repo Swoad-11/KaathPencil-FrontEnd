@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Mina&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+
+.title {
+    font-family: 'Mina', sans-serif;
+}
+
+.secondary-title {
+    font-family: 'Oswald', sans-serif;
+}
+
+.description {
+    font-size: 1.25rem;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
