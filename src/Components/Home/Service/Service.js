@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 import { Link, useNavigate } from 'react-router-dom';
-import useItems from '../../Hooks/useItems';
-import Items from '../../Items/Items';
+import useItems from '../../../Hooks/useItems';
+import Items from '../../../Items/Items';
 
 
 const Service = () => {

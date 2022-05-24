@@ -7,6 +7,14 @@ const Intro = () => {
         <div className='mb-5 p-5 mx-auto'>
             <h1 className="title text-4xl font-bold mt-8 mb-5 text-center text-cyan-900">কাঠ-পেন্সিল</h1>
             <div className='grid lg:grid-cols-2 sm:grid-cols-1 mt-8 items-center gap-5'>
+                <div className='px-5 mx-auto lg:px-32'>
+                    <h3 className='secondary-title text-center text-3xl font-semibold text-cyan-900 mb-2'>
+                        What we provide?
+                    </h3>
+                    <p className='description text-center'>
+                        As a companion for life, we manufacture high-quality products for writing, drawing and creative design and other stationary items.
+                    </p>
+                </div>
                 <div>
                     <section className="overflow-hidden text-cyan-700">
                         <div className="container px-5 mx-auto lg:px-32">
@@ -43,14 +51,7 @@ const Intro = () => {
                         </div>
                     </section>
                 </div>
-                <div>
-                    <h3 className='secondary-title text-center text-3xl font-semibold text-cyan-900 mb-2'>
-                        What we provide?
-                    </h3>
-                    <p className='description text-center'>
-                        As a companion for life, we manufacture high-quality products for writing, drawing and creative design and other stationary items.
-                    </p>
-                </div>
+
             </div>
         </div>
     );

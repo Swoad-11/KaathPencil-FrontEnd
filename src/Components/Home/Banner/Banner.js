@@ -1,7 +1,7 @@
 import React from 'react';
-import img1 from '../../images/img1.jpg';
-import img2 from '../../images/img2.jpg';
-import img3 from '../../images/img3.jpg';
+import img1 from '../../../images/img1.jpg';
+import img2 from '../../../images/img2.jpg';
+import img3 from '../../../images/img3.jpg';
 
 const Banner = () => {
     return (
@@ -31,7 +31,7 @@ const Banner = () => {
                     ></button>
                 </div>
 
-                <div className="carousel-inner relative w-full overflow-hidde">
+                <div className="carousel-inner relative w-full overflow-hidden">
 
                     <div className="carousel-item active relative float-left w-full">
                         <img
@@ -40,7 +40,7 @@ const Banner = () => {
                             alt="Motorbike Smoke"
                         />
                         <div className="carousel-caption hidden md:block absolute text-center">
-                            <h5 className="text-4xl font-bold ">Did you know?</h5>
+                            <h5 className="text-4xl font-bold secondary-title">Did you know?</h5>
                             <p className='text-xl font-semibold text-white'>For our own pencil production, we only use wood from sustainably managed forests.</p>
                         </div>
                     </div>

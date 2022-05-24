@@ -20,7 +20,7 @@ const Header = () => {
             >
                 <div className="container-fluid w-full flex flex-wrap items-center justify-between px-6">
                     <button
-                        className="navbar-toggler text-black border-0 hover:shadow-none hover:no-underline py-2 px-2.5 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline"
+                        className="navbar-toggler text-cyan-100 border-0 hover:shadow-none hover:no-underline py-2 px-2.5 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent1"
@@ -52,15 +52,35 @@ const Header = () => {
                         <ul className="secondary-title navbar-nav flex flex-wrap justify-between items-center mx-auto flex-col pl-0 list-style-none mr-auto">
 
                             <li className="nav-item p-2">
-                                <CustomLink className="nav-link text-white py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent" to="/Home">Home</CustomLink>
+                                <CustomLink className="nav-link py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent" to="/Home">Home</CustomLink>
                             </li>
                             <li className="nav-item p-2">
-                                <CustomLink className="nav-link text-white py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent" to="/blogs">Blogs</CustomLink>
+                                <CustomLink className="nav-link py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent" to="/blogs">Blogs</CustomLink>
                             </li>
                             <li className="nav-item p-2">
-                                <CustomLink className="nav-link text-white py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent" to="about">About</CustomLink>
+                                <CustomLink className="nav-link py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent" to="about">About</CustomLink>
                             </li>
-
+                            {
+                                user && <>
+                                    <li className="nav-item dropdown static">
+                                        <Link className="nav-link pr-2 lg:px-2 py-2 block text-white transition duration-150 ease-in-out dropdown-toggle flex items-center whitespace-nowrap" to="#" data-mdb-ripple="true" data-mdb-ripple-color="light" type="button" id="dropdownMenuButtonX" data-bs-toggle="dropdown"
+                                            aria-expanded="false">Dashboard
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" className="w-2 ml-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+                                            </svg>
+                                        </Link>
+                                        <div className="dropdown-menu w-1/4 mt-0 hidden shadow-lg bg-cyan-50 absolute left-0 top-full" aria-labelledby="dropdownMenuButtonX">
+                                            <div className="px-6 lg:px-8 py-5">
+                                                <div className="bg-cyan-50 text-gray-600">
+                                                    <Link to='/manageitems' className="dropdown-item text-sm py-2 px-4 font-normal block whitespace-nowrap bg-transparent text-cyan-900 hover:bg-cyan-100 w-full">Manage Items</Link>
+                                                    <Link to='/additems' className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-cyan-900 hover:bg-cyan-100">Add Items</Link>
+                                                    <Link to='/myitems' className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-cyan-900 hover:bg-cyan-100">My Items</Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </>
+                            }
                         </ul>
 
                     </div>
@@ -99,18 +119,9 @@ const Header = () => {
                                 aria-labelledby="dropdownMenuButton1"
                             >
                                 <li className='grid grid-cols-1'>
-
-                                    {
-                                        user && <>
-                                            <Link to='/manageitems' className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-cyan-900 hover:bg-cyan-100">Manage Items</Link>
-                                            <Link to='/additems' className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-cyan-900 hover:bg-cyan-100">Add Items</Link>
-                                            <Link to='/myitems' className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-cyan-900 hover:bg-cyan-100">My Items</Link>
-                                            <hr />
-                                        </>
-                                    }
                                     {
                                         user ?
-                                            <button className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-cyan-900 hover:bg-amber-100" onClick={handleSignOut}><span>Sign Out</span></button>
+                                            <button className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-cyan-900 hover:bg-cyan-100 left-0" onClick={handleSignOut}><span>Sign Out</span></button>
                                             :
                                             <Link
                                                 className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-cyan-900 hover:bg-cyan-100"

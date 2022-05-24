@@ -8,32 +8,28 @@ const review = () => {
                 <div>
                     <h1 className="secondary-title text-4xl font-bold mb-8 text-center text-cyan-900">Customer Reviews</h1>
                 </div>
-                <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 p-5'>
-                    <div className="flex justify-center">
-                        <div className="block rounded-lg shadow-lg bg-cyan-100 hover:bg-cyan-200 max-w-sm ">
-                            <div className="py-3 px-6 border-b border-cyan-300">
-                                <h5 className="secondary-title text-gray-900 text-xl mb-2 font-semibold text-center">Got My Dream Bike</h5>
-                            </div>
-                            <div className="p-6">
-
-                                <p className="description text-cyan-700 text-base mb-4">
-                                    <svg
-                                        aria-hidden="true"
-                                        focusable="false"
-                                        data-prefix="fas"
-                                        data-icon="quote-left"
-                                        className="w-6 pr-2 inline-block"
-                                        role="img"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 512 512"
-                                    >
-                                        <path
-                                            fill="currentColor"
-                                            d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
-                                        ></path>
-                                    </svg>
-                                    They had the bike i wanted in stock and at a great price. Walked out the door with it same day - ez peezy!
-                                </p>
+                <div id="carouselExampleCaptions" class="carousel slide relative carousel-dark" data-bs-ride="carousel">
+                    <div class="carousel-inner relative w-full overflow-hidden">
+                        <div class="carousel-item active relative float-left w-full text-center">
+                            <p className="description text-cyan-700 text-base mb-4 italic">
+                                <svg
+                                    aria-hidden="true"
+                                    focusable="false"
+                                    data-prefix="fas"
+                                    data-icon="quote-left"
+                                    className="w-6 pr-2 inline-block"
+                                    role="img"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 512 512"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                                    ></path>
+                                </svg>
+                                They had the bike i wanted in stock and at a great price. Walked out the door with it same day - ez peezy!
+                            </p>
+                            <div class="mt-12 mb-6 flex justify-center">
                                 <ul className="flex justify-center">
                                     <li>
                                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" className="w-4 text-yellow-500 mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -63,36 +59,28 @@ const review = () => {
 
                                 </ul>
                             </div>
-                            <div className="py-3 px-6 text-gray-600">
-                                - Shannon S.
-                            </div>
+                            <p class="text-gray-500">- Anna Morian</p>
                         </div>
-                    </div>
-                    <div className="flex justify-center">
-                        <div className="block rounded-lg shadow-lg bg-cyan-100 hover:bg-cyan-200 max-w-sm">
-                            <div className="py-3 px-6 border-b border-cyan-300">
-                                <h5 className="secondary-title text-gray-900 text-xl mb-2 font-semibold text-center">Trace X 2</h5>
-                            </div>
-                            <div className="p-6">
-
-                                <p className="description text-cyan-700 text-base mb-4">
-                                    <svg
-                                        aria-hidden="true"
-                                        focusable="false"
-                                        data-prefix="fas"
-                                        data-icon="quote-left"
-                                        className="w-6 pr-2 inline-block"
-                                        role="img"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 512 512"
-                                    >
-                                        <path
-                                            fill="currentColor"
-                                            d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
-                                        ></path>
-                                    </svg>
-                                    The Trance X 2 is a solid all around mountain bike for the money. I'm very happy with it.<br />
-                                </p>
+                        <div class="carousel-item relative float-left w-full text-center">
+                            <p className="description text-cyan-700 text-base mb-4 italic">
+                                <svg
+                                    aria-hidden="true"
+                                    focusable="false"
+                                    data-prefix="fas"
+                                    data-icon="quote-left"
+                                    className="w-6 pr-2 inline-block"
+                                    role="img"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 512 512"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                                    ></path>
+                                </svg>
+                                They had the bike i wanted in stock and at a great price. Walked out the door with it same day - ez peezy!
+                            </p>
+                            <div class="mt-12 mb-6 flex justify-center">
                                 <ul className="flex justify-center">
                                     <li>
                                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" className="w-4 text-yellow-500 mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -122,36 +110,28 @@ const review = () => {
 
                                 </ul>
                             </div>
-                            <div className="py-3 px-6 text-gray-600">
-                                - Mike D.
-                            </div>
+                            <p class="text-gray-500">- Teresa May</p>
                         </div>
-                    </div>
-                    <div className="flex justify-center">
-                        <div className="block rounded-lg shadow-lg bg-cyan-100 hover:bg-cyan-200 max-w-sm">
-                            <div className="py-3 px-6 border-b border-cyan-300">
-                                <h5 className="secondary-title text-gray-900 text-xl mb-2 font-semibold  text-center">Good Products Good Customer Service</h5>
-                            </div>
-                            <div className="p-6">
-
-                                <p className="description text-cyan-700 text-base mb-4 ">
-                                    <svg
-                                        aria-hidden="true"
-                                        focusable="false"
-                                        data-prefix="fas"
-                                        data-icon="quote-left"
-                                        className="w-6 pr-2 inline-block"
-                                        role="img"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 512 512"
-                                    >
-                                        <path
-                                            fill="currentColor"
-                                            d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
-                                        ></path>
-                                    </svg>
-                                    During all my visits, they have made me feel important and have always helpful.
-                                </p>
+                        <div class="carousel-item relative float-left w-full text-center">
+                            <p className="description text-cyan-700 text-base mb-4 italic">
+                                <svg
+                                    aria-hidden="true"
+                                    focusable="false"
+                                    data-prefix="fas"
+                                    data-icon="quote-left"
+                                    className="w-6 pr-2 inline-block"
+                                    role="img"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 512 512"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                                    ></path>
+                                </svg>
+                                They had the bike i wanted in stock and at a great price. Walked out the door with it same day - ez peezy!
+                            </p>
+                            <div class="mt-12 mb-6 flex justify-center">
                                 <ul className="flex justify-center">
                                     <li>
                                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" className="w-4 text-yellow-500 mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -181,11 +161,27 @@ const review = () => {
 
                                 </ul>
                             </div>
-                            <div className="py-3 px-6 text-gray-600">
-                                - Ismael O.
-                            </div>
+                            <p class="text-gray-500">- Kate Allise</p>
                         </div>
                     </div>
+                    <button
+                        class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+                        type="button"
+                        data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev"
+                    >
+                        <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                        class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+                        type="button"
+                        data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next"
+                    >
+                        <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
         </div >
