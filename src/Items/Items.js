@@ -27,7 +27,7 @@ const Items = ({ item }) => {
                         <p className="description text-cyan-900 text-base mb-4">
                             Quantity: {quantity}
                         </p>
-                        <button onClick={() => navigateToInventory(_id)} type="button" className="secondary-title inline-block px-6 py-2.5 bg-cyan-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-700 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out">Update</button>
+                        <button onClick={() => navigateToInventory(_id)} type="button" className="secondary-title inline-block px-6 py-2.5 bg-cyan-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-700 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out">Buy Now</button>
                     </div>
                 </div>
             </div>
