@@ -9,8 +9,8 @@ const Footer = () => {
     return (
         <div>
             <footer className="text-center lg:text-left bg-cyan-800 text-black">
-                <div className="flex justify-center items-center lg:justify-between p-6 border-b border-gray-500">
-                    <div className="mr-12 hidden lg:block text-gray-400">
+                <div className="flex justify-center items-center lg:justify-between p-6 border-b border-cyan-700">
+                    <div className="mr-12 hidden lg:block text-cyan-100">
                         <span>Get connected with us on social networks:</span>
                     </div>
                     <div className="flex justify-center">

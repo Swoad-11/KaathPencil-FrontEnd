@@ -17,8 +17,12 @@ const Blogs = () => {
                         <div className="ml-6 mb-6 pb-6">
 
                             <p className="text-cyan-700 mt-2 mb-4 description">
-                                Javascript is an implementation of ECMAScript, a standard defining the programming language.Browsers have a built-in interpreter for Javascript, along with a bunch of libraries and a run-time environment for working with web pages. <br />
-                                Nodejs is an interpreter and environment for javascript which includes a bunch of libraries for using javascript as a general-purpose programming language, with an emphasis on asynchronicity and non-blocking operations.
+
+                                We can improve performance of a React application by the following ways:
+                                <br /> Keeping component state local where necessary.
+                                <br /> Memoizing React components to prevent unnecessary re-renders.
+                                <br /> Code-splitting in React using dynamic import()
+                                <br /> Windowing or list virtualization in React.
                             </p>
 
                         </div>
@@ -31,8 +35,11 @@ const Blogs = () => {
                         <div className="ml-6 mb-6 pb-6">
 
                             <p className="text-cyan-700 mt-2 mb-4 description">
-                                Node.js uses JavaScript, which is great if we're coming from a front-end developer background - a very common pairing that leads to quick full-stack development potential. <br />
-                                Mongodb is used for High Write Load, High Availability in Cloud-It is easier to set up a series of master-slave servers and recovery from failure is faster too, Scalability and Big Data sets And Unstable Schema.
+                                There are four main types of state we need to properly manage in our React apps:
+                                <br />1. Local state.
+                                <br />2. Global state.
+                                <br />3. Server state.
+                                <br />4. URL state.
                             </p>
                         </div>
                     </li>
@@ -44,11 +51,7 @@ const Blogs = () => {
                         <div className="ml-6 mb-6 pb-6">
 
                             <p className="text-cyan-700 mt-2 mb-4 description">
-                                SQL databases are a Relational Database( RDBMS) whereas NoSQL databases are distributed databases. This means they are easier to manage and they provide a higher level of flexibility with newer data models.<br />
-                                Sql databases are good for complex query whereas Nosql databases are not good for complex queries No sql don't have standard interfaces to perform complex queries.<br />
-                                Sql database represent data in the form of table means it represent data in row and coloumns whereas Nosql database represents data in documents means it collects data in key value pairs. <br />
-                                SQL databases are vertically scalable whereas NoSQL databases are horizenatlly scalable. <br />
-                                SQL databases are scaled increased by increasing the horse power whereas Nosql databases are scaled by increasing the database servers. <br />
+                                The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object.<br /> Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object.setPrototypeOf.
                             </p>
 
                         </div>
@@ -56,17 +59,16 @@ const Blogs = () => {
                     <li>
                         <div className="flex flex-start items-center">
                             <div className="bg-cyan-600 w-4 h-4 flex items-center justify-center rounded-full -ml-2 mr-3 -mt-2"></div>
-                            <h4 className="text-gray-800 font-semibold text-xl -mt-2 secondary-title">Why you do not set the state directly in React? For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts</h4>
+                            <h4 className="text-gray-800 font-semibold text-xl -mt-2 secondary-title">Why you do not set the state directly in React? For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts.</h4>
                         </div>
                         <div className="ml-6 mb-6 pb-6">
 
                             <p className="text-cyan-700 mt-2 mb-4 description">
-                                JWT, or JSON Web Token, is an open standard used to share security information between two parties — a client and a server. Each JWT contains encoded JSON objects, including a set of claims. JWTs are signed using a cryptographic algorithm to ensure that the claims cannot be altered after the token is issued. In short, JWTs are used as a secure way to authenticate users and share information. <br />
-                                JWT works like this:<br />
-                                The user/client app sends a sign in request. <br />
-                                Once verified, the API will create a JSON Web Token and sign it using a secret key. <br />
-                                Then the API will return that token back to the client application .<br />
-                                Finally, the client app will receive the token, verify it on its own side to make sure it's authentic and then proceed to use it on every subsequent request to authenticate the user without having to send their credentials anymore.
+                                One should never update the state directly because of the following reasons:
+
+                                <br />If we update it directly, calling the setState() afterward may just replace the update we made.
+                                <br />When we directly update the state, it does not change this.state immediately. Instead, it creates a pending state transition, and accessing it after calling this method will only return the present value.<br />
+                                We will lose control of the state across all components.
                             </p>
 
                         </div>
@@ -79,12 +81,10 @@ const Blogs = () => {
                         <div className="ml-6 mb-6 pb-6">
 
                             <p className="text-cyan-700 mt-2 mb-4 description">
-                                JWT, or JSON Web Token, is an open standard used to share security information between two parties — a client and a server. Each JWT contains encoded JSON objects, including a set of claims. JWTs are signed using a cryptographic algorithm to ensure that the claims cannot be altered after the token is issued. In short, JWTs are used as a secure way to authenticate users and share information. <br />
-                                JWT works like this:<br />
-                                The user/client app sends a sign in request. <br />
-                                Once verified, the API will create a JSON Web Token and sign it using a secret key. <br />
-                                Then the API will return that token back to the client application .<br />
-                                Finally, the client app will receive the token, verify it on its own side to make sure it's authentic and then proceed to use it on every subsequent request to authenticate the user without having to send their credentials anymore.
+                                We can implement find() and filter() methods to find products by name.
+
+                                <br />The find() method returns the first value in an array that matches the conditions of a function. If there is no match, the method returns undefined.
+                                <br />The filter() method returns a new array of all the values in an array that matches the conditions of a function. If there is no match, the method returns an empty array.
                             </p>
 
                         </div>
@@ -97,12 +97,8 @@ const Blogs = () => {
                         <div className="ml-6 mb-6 pb-6">
 
                             <p className="text-cyan-700 mt-2 mb-4 description">
-                                JWT, or JSON Web Token, is an open standard used to share security information between two parties — a client and a server. Each JWT contains encoded JSON objects, including a set of claims. JWTs are signed using a cryptographic algorithm to ensure that the claims cannot be altered after the token is issued. In short, JWTs are used as a secure way to authenticate users and share information. <br />
-                                JWT works like this:<br />
-                                The user/client app sends a sign in request. <br />
-                                Once verified, the API will create a JSON Web Token and sign it using a secret key. <br />
-                                Then the API will return that token back to the client application .<br />
-                                Finally, the client app will receive the token, verify it on its own side to make sure it's authentic and then proceed to use it on every subsequent request to authenticate the user without having to send their credentials anymore.
+                                Unit testing is a process in which smallest part of the software called unit are uniquely individually performing its operation are verified. <br />
+                                The purpose of unit testing is to check the functionality of each isolated module to verify whether it is working as expected or not. In this testing method the smallest, individual units/modules/components of the software are isolated and checked.
                             </p>
 
                         </div>
