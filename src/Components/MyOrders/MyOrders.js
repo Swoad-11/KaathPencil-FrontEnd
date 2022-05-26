@@ -19,7 +19,7 @@ const MyOrders = () => {
     return (
         <div>
             <div>
-                <h1 className="secondary-title text-4xl font-bold mt-8 mb-5 text-center text-cyan-900">My Items</h1>
+                <h1 className="secondary-title text-4xl font-bold mt-8 mb-5 text-center text-cyan-900">My Orders</h1>
             </div>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 mb-5 p-5 mx-auto items-center'>
 

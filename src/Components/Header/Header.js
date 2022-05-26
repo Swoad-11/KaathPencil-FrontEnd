@@ -69,7 +69,6 @@ const Header = () => {
 
                     <div className=" relative">
                         <div className="flex items-center relative">
-
                             {
                                 user ?
                                     <Dashboard></Dashboard>
