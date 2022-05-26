@@ -2,38 +2,30 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
-import UseMyItem from '../../Items/useMyItem/UseMyItem';
-
-const MyItems = () => {
+const MyOrders = () => {
     const [user] = useAuthState(auth);
-    const [myItem, setMyItem] = useState([]);
+    const [myOrder, setMyOrder] = useState([]);
 
     useEffect(() => {
         const email = user.email;
         const url = `https://shrouded-sands-14035.herokuapp.com/items?email=${email}`;
         fetch(url)
             .then(res => res.json())
-            .then(data => setMyItem(data));
+            .then(data => setMyOrder(data));
 
     }, [user])
 
-    const newItem = myItem.filter(item => item.email === user.email);
+    const newOrder = myOrder.filter(item => item.email === user.email);
     return (
         <div>
             <div>
                 <h1 className="secondary-title text-4xl font-bold mt-8 mb-5 text-center text-cyan-900">My Items</h1>
             </div>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 mb-5 p-5 mx-auto items-center'>
-                {
-                    newItem.map(item => <UseMyItem
-                        key={item._id}
-                        item={item}
-                    >
-                    </UseMyItem>)
-                }
+
             </div>
         </div>
     );
 };
 
-export default MyItems;
+export default MyOrders;

@@ -55,6 +55,9 @@ const Header = () => {
                                 <CustomLink className="nav-link py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent" to="/Home">Home</CustomLink>
                             </li>
                             <li className="nav-item p-2">
+                                <CustomLink className="nav-link py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent" to="/portfolio">Portfolio</CustomLink>
+                            </li>
+                            <li className="nav-item p-2">
                                 <CustomLink className="nav-link py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent" to="/blogs">Blogs</CustomLink>
                             </li>
                             <li className="nav-item p-2">
@@ -69,7 +72,7 @@ const Header = () => {
                                                 <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
                                             </svg>
                                         </Link>
-                                        <div className="dropdown-menu w-1/4 mt-0 hidden shadow-lg bg-cyan-50 absolute left-0 top-full" aria-labelledby="dropdownMenuButtonX">
+                                        <div className="dropdown-menu lg:w-1/4 mt-0 hidden shadow-lg bg-cyan-50 absolute left-0 top-full" aria-labelledby="dropdownMenuButtonX">
                                             <div className="px-6 lg:px-8 py-5">
                                                 <div className="bg-cyan-50 text-gray-600">
                                                     <Link to='/manageitems' className="dropdown-item text-sm py-2 px-4 font-normal block whitespace-nowrap bg-transparent text-cyan-900 hover:bg-cyan-100 w-full">Manage Items</Link>
@@ -121,7 +124,7 @@ const Header = () => {
                                 <li className='grid grid-cols-1'>
                                     {
                                         user ?
-                                            <button className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-cyan-900 hover:bg-cyan-100 left-0" onClick={handleSignOut}><span>Sign Out</span></button>
+                                            <button className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-cyan-900 hover:bg-cyan-100 " onClick={handleSignOut}><span>Sign Out</span></button>
                                             :
                                             <Link
                                                 className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-cyan-900 hover:bg-cyan-100"

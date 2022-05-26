@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import useItemDetail from '../../Hooks/useItemDetail';
 
-const Inventory = () => {
+const Purchase = () => {
     const { itemId } = useParams();
 
     const [item] = useItemDetail(itemId);
@@ -121,4 +121,4 @@ const Inventory = () => {
     );
 };
 
-export default Inventory;
+export default Purchase;

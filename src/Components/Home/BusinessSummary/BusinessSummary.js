@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSackDollar, faClipboardCheck, faPenRuler } from '@fortawesome/free-solid-svg-icons'
+import { faSackDollar, faHeart, faPenRuler, faEarth } from '@fortawesome/free-solid-svg-icons'
 
 const BusinessSummary = () => {
     return (
@@ -10,41 +10,53 @@ const BusinessSummary = () => {
             <div>
                 <h1 className="secondary-title text-4xl font-bold mt-8 mb-5 text-center text-cyan-900">Business Summary</h1>
             </div>
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 mb-5 p-5 mx-auto items-center'>
+            <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-1 mb-5 p-5 px-8 mx-auto items-center'>
 
                 <div className="flex justify-center">
-                    <div className="block rounded-lg shadow-lg bg-cyan-100 hover:bg-cyan-200 w-3/4 text-center ">
+                    <div className="block rounded-lg shadow-lg bg-cyan-100 hover:bg-cyan-200 w-full text-center ">
                         <div className="py-3">
-                            <p className=" text-cyan-700 text-center text-5xl mt-4 mb-1">
-                                <FontAwesomeIcon icon={faSackDollar} />
+                            <p className=" text-cyan-700 text-center text-5xl mt-4 mb-1 font-bold secondary-title">
+                                <FontAwesomeIcon className='text-green-500' icon={faSackDollar} /> 70M+
                             </p>
                         </div>
                         <p className="description text-cyan-700 font-bold text-2xl mb-4">
-                            120M+ BDT Annual Revenue
+                            Annual Revenue
                         </p>
                     </div>
                 </div>
                 <div className="flex justify-center">
-                    <div className="block rounded-lg shadow-lg bg-cyan-100 hover:bg-cyan-200 w-3/4 text-center ">
+                    <div className="block rounded-lg shadow-lg bg-cyan-100 hover:bg-cyan-200 w-full text-center ">
                         <div className="py-3">
-                            <p className=" text-cyan-700 text-center text-5xl mt-4 mb-1">
-                                <FontAwesomeIcon icon={faClipboardCheck} />
+                            <p className=" text-cyan-700 text-center text-5xl mt-4 mb-1 font-bold secondary-title">
+                                <FontAwesomeIcon className='text-rose-400' icon={faHeart} /> 33K+
                             </p>
                         </div>
                         <p className="description text-cyan-700 font-bold text-2xl mb-4">
-                            33K+ Reviews
+                            Reviews
                         </p>
                     </div>
                 </div>
                 <div className="flex justify-center">
-                    <div className="block rounded-lg shadow-lg bg-cyan-100 hover:bg-cyan-200 w-3/4 text-center ">
+                    <div className="block rounded-lg shadow-lg bg-cyan-100 hover:bg-cyan-200 w-full text-center ">
                         <div className="py-3">
-                            <p className=" text-cyan-700 text-center text-5xl mt-4 mb-1">
-                                <FontAwesomeIcon icon={faPenRuler} />
+                            <p className=" text-cyan-700 text-center text-5xl mt-4 mb-1 font-bold secondary-title">
+                                <FontAwesomeIcon className='text-blue-400' icon={faPenRuler} /> Customers
                             </p>
                         </div>
                         <p className="description text-cyan-700 font-bold text-2xl mb-4">
-                            50+ Stationary Items
+                            All Around The World!
+                        </p>
+                    </div>
+                </div>
+                <div className="flex justify-center">
+                    <div className="block rounded-lg shadow-lg bg-cyan-100 hover:bg-cyan-200 w-full text-center ">
+                        <div className="py-3">
+                            <p className=" text-cyan-700 text-center text-5xl mt-4 mb-1 font-bold secondary-title">
+                                <FontAwesomeIcon className='text-teal-700' icon={faEarth} /> 50+
+                            </p>
+                        </div>
+                        <p className="description text-cyan-700 font-bold text-2xl mb-4">
+                            Stationary Items
                         </p>
                     </div>
                 </div>

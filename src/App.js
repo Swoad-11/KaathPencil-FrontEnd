@@ -9,11 +9,10 @@ import Login from './Components/Login/Login/Login';
 import RequireAuth from './Components/Login/RequireAuth/RequireAuth';
 import Signup from './Components/Login/Signup/Signup';
 import About from './Components/About/About';
-import Inventory from './Components/Inventory/Inventory';
-import AddItems from './Components/AddItems/AddItems';
-import MyItems from './Components/MyItems/MyItems';
-import ManageItems from './Components/ManageItems/ManageItems';
-import ManageInventory from './Components/ManageInventory/ManageInventory';
+import Portfolio from './Components/Portfolio/Portfolio';
+import AllProducts from './Components/AllProducts/AllProducts';
+import MyOrders from './Components/MyOrders/MyOrders';
+import Purchase from './Components/Purchase/Purchase';
 
 function App() {
   return (
@@ -22,32 +21,19 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/inventory/:itemId" element={
+        <Route path="/purchase/:itemId" element={
           <RequireAuth>
-            <Inventory></Inventory>
+            <Purchase></Purchase>
           </RequireAuth>
         }></Route>
-        <Route path="/additems" element={
+        <Route path="/myorders" element={
           <RequireAuth>
-            <AddItems></AddItems>
-          </RequireAuth>
-        }></Route>
-        <Route path="/myitems" element={
-          <RequireAuth>
-            <MyItems></MyItems>
-          </RequireAuth>
-        }></Route>
-        <Route path="/manageitems" element={
-          <RequireAuth>
-            <ManageItems></ManageItems>
-          </RequireAuth>
-        }></Route>
-        <Route path="/manageinventory" element={
-          <RequireAuth>
-            <ManageInventory></ManageInventory>
+            <MyOrders></MyOrders>
           </RequireAuth>
         }></Route>
         <Route path='/about' element={<About></About>}></Route>
+        <Route path='/allproducts' element={<AllProducts></AllProducts>}></Route>
+        <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
