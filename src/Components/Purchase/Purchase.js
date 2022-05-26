@@ -67,7 +67,7 @@ const Purchase = () => {
     return (
         <div>
             <div>
-                <h1 className="secondary-title text-3xl font-bold mt-8 mb-2 text-center text-cyan-900">{name}</h1>
+                <h1 className="secondary-title text-3xl font-bold mt-8 mb-2 text-center text-cyan-900">Order for: <span className='text-cyan-600'>{name}</span></h1>
             </div>
             <div className='mx-auto p-8'>
                 <div className="flex flex-wrap justify-center">
