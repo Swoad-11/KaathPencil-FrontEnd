@@ -5,6 +5,7 @@ import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import useAdmin from '../../../Hooks/useAdmin';
 
 const Dashboard = () => {
     const [showSidebar, setShowSidebar] = useState(false);
@@ -12,6 +13,7 @@ const Dashboard = () => {
         signOut(auth);
     }
     const [user] = useAuthState(auth);
+    const [admin] = useAdmin(user);
 
     return (
         <>
@@ -34,22 +36,44 @@ const Dashboard = () => {
                 className={`top-0 right-0 p-16 w-60 bg-cyan-700 shadow-lg px-1 text-white fixed h-full z-40  ease-in-out duration-300 ${showSidebar ? "translate-x-0 " : "translate-x-full"
                     }`}
             >
-                <ul class="relative">
+                <ul className="relative">
                     {
-                        user && <li class="relative">
-                            <p class="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out font-semibold text-base rounded-lg text-black" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">{user.displayName}</p>
+                        user && <li className="relative">
+                            <p className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out font-semibold text-base rounded-lg text-black" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">{user.displayName}</p>
                         </li>
                     }
-                    <li class="relative">
-                        <Link to="/myorders" class="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">My Orders</Link>
-                    </li>
-                    <li class="relative">
-                        <Link to="/review" class="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">Add A Review</Link>
-                    </li>
-                    <li class="relative">
-                        <Link to="/myprofile" class="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">My Profile</Link>
-                    </li>
+                    {user && <>
+                        <li className="relative">
+                            <Link to="/myprofile" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">My Profile</Link>
+                        </li>
+                        <li className="relative">
+                            <Link to="/myorders" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">My Orders</Link>
+                        </li>
+                        <li className="relative">
+                            <Link to="/review" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">Add A Review</Link>
+                        </li>
+                    </>}
+
+                    {admin && <>
+                        <li className="relative">
+                            <Link to="/myprofile" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">My Profile</Link>
+                        </li>
+                        <li className="relative">
+                            <Link to="/manageorders" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">Manage All Orders</Link>
+                        </li>
+                        <li className="relative">
+                            <Link to="/additem" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">Add A Product</Link>
+                        </li>
+                        <li className="relative">
+                            <Link to="/makeadmin" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">Make Admin</Link>
+                        </li>
+                        <li className="relative">
+                            <Link to="/manageproduct" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">Manage Product</Link>
+                        </li>
+                    </>}
+
                     <hr />
+
                     <li>
                         <button className="flex w-full secondary-title items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" onClick={handleSignOut}>
                             <FontAwesomeIcon className='w-6 h-6 text-gray-400 transition duration-75 group-hover:text-cyan-900 dark:group-hover:text-white' icon={faRightFromBracket} />
