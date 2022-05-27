@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
-import SocialLogin from '../SocialLogin/SocialLogin';
+import { useForm } from "react-hook-form";
 import Loading from '../../Loading/Loading';
+import useToken from '../../../Hooks/useToken';
 
 
 const Signup = () => {
@@ -71,8 +72,8 @@ const Signup = () => {
                             message: 'Password is Required'
                         },
                         minLength: {
-                            value: 6,
-                            message: 'Must be 6 characters or longer'
+                            value: 8,
+                            message: 'Must be 8 characters or longer'
                         }
                     })} name="password" id="" placeholder='Password' />
                     <label className="label">
@@ -84,8 +85,22 @@ const Signup = () => {
                         <input className=' w-full px-6 py-2.5 mb-5 bg-cyan-600 text-white font- text-lg leading-tight rounded shadow-md hover:bg-cyan-700 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out' type="submit" value="Sign Up" />
                     </div>
                 </form>
-                <p>Already have an account? <Link to="/login" className='text-cyan-600 mx-3' onClick={navigateLogin}>Please Login</Link> </p>
-                <SocialLogin></SocialLogin>
+                <p>Already have an account? <Link to="/login" className='text-cyan-600 mx-3'>Please Login</Link> </p>
+                <div className='description'>
+                    <div className=' flex items-center'>
+                        <div style={{ height: '1px' }} className='bg-cyan-600 w-48'></div>
+                        <p className='mt-2 px-2'>or</p>
+                        <div style={{ height: '1px' }} className='bg-cyan-600 w-48'></div>
+                    </div>
+
+                    <div>
+                        <button onClick={() => signInWithGoogle()} type="button" data-mdb-ripple="true" data-mdb-ripple-color="light" className="bg-white border-2 rounded-lg hover:bg-cyan-600 mx-auto text-lg flex items-center gap-4 px-8 py-2.5 mb-2 text-cyan-900 hover:text-white font-medium leading-tight shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512" className="w-4 h-4">
+                                <path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
+                            </svg> <p>Google Login</p>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     );
