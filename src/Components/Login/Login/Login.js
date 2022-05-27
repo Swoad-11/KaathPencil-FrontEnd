@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-
+import { useForm } from "react-hook-form";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -68,8 +68,10 @@ const Login = () => {
                 <form onSubmit={handleSubmit}>
                     <div className="form-group mb-6">
                         <label htmlFor="exampleInputEmail2" className="form-label inline-block mb-2 text-cyan-700">Email Address</label>
-                        <input ref={emailRef} type="email" className="form-control block w-full px-3 py-1.5 text-base font-normal text-cyan-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-cyan-700 focus:bg-white focus:border-cyan-600 focus:outline-none" id="exampleInputEmail2"
-                            aria-describedby="emailHelp" placeholder="Enter email" required />
+                        <input ref={emailRef} type="email" className="form-control block w-full px-3 py-1.5 text-base font-normal text-cyan-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-cyan-700 focus:bg-white focus:border-cyan-600 focus:outline-none"
+
+                            id="exampleInputEmail2"
+                            aria-describedby="emailHelp" placeholder="Enter email" />
                     </div>
                     <div className="form-group mb-6">
                         <label className="form-label inline-block mb-2 text-cyan-700">Password</label>
@@ -91,7 +93,7 @@ const Login = () => {
                     {errorElement}
                     <SocialLogin></SocialLogin>
                     <p className="text-gray-800 mt-6 text-center">Not a member? <Link to="/signup"
-                        className="text-cyan-900 hover:text-cyan-900 focus:text-red-700 transition duration-200 ease-in-out"
+                        className="text-cyan-600 hover:text-cyan-700 focus:text-red-700 transition duration-200 ease-in-out"
                         onClick={navigateRegister}>Register</Link>
                     </p>
                 </form>

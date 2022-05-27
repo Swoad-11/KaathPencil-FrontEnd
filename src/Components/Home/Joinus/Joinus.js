@@ -20,7 +20,7 @@ const Joinus = () => {
                                 Enchant your loved ones with a classic writing utensil of masterful workmanship. <br />
                                 Find the perfect gift for your beloved ones!
                             </p>
-                            <Link to="/inventory">
+                            <Link to="/allproducts">
                                 <button type="button"
                                     className="inline-block px-6 py-2.5 border-2 border-white text-white hover:border-cyan-500 hover:text-cyan-100 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                                     data-mdb-ripple="true" data-mdb-ripple-color="light">

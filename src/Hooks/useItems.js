@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const useItems = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch('https://shrouded-sands-14035.herokuapp.com/items')
+        fetch('https://peaceful-taiga-28630.herokuapp.com/product')
             .then(res => res.json())
             .then(data => setItems(data));
     }, []);

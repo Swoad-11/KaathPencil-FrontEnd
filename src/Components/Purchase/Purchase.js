@@ -7,14 +7,19 @@ import auth from '../../firebase.init';
 
 const Purchase = () => {
     const { itemId } = useParams();
-    const [item] = useItemDetail(itemId);
-    const [product, setProduct] = useState({});
-    const [orderQuantity, setOrderQuantity] = useState(0);
-    const { _id, name, image, description, price, available, quantity } = item;
+    const [inputQuantity, setInputQuantity] = useState(0);
     const [user] = useAuthState(auth);
+    const [item] = useItemDetail(itemId);
+    const { _id, name, image, description, price, available, quantity } = item;
+    const input = parseInt(inputQuantity);
+    const quantityAvailable = parseInt(available)
+    const minimumQuantity = parseInt(quantity);
+
+    const totalPrice = parseInt(price) * inputQuantity;
+
 
     const searchQuantity = e => {
-        setOrderQuantity(e.target.value);
+        setInputQuantity(e.target.value);
     };
 
     const handleOrder = event => {
@@ -41,20 +46,21 @@ const Purchase = () => {
         // })
         //     .then(res => res.json())
         //     .then(data => {
+        //         console.log(data)
         //         if (data.success) {
         //             toast('Successfully added!')
         //         }
+
+
         //         // refetch();
         //     });
     };
 
-    console.log(quantity);
-    const totalPrice = parseInt(price) * quantity;
 
     return (
         <div>
             <div>
-                <h1 className="secondary-title text-3xl font-bold mt-8 mb-2 text-center text-cyan-900">Order for: <span className='text-cyan-600'>{name}</span></h1>
+                <h1 className="secondary-title text-3xl font-bold mt-8 mb-2 text-center text-cyan-600">{name}</h1>
             </div>
             <div className='mx-auto p-8'>
                 <div className="flex flex-wrap justify-center">
@@ -67,36 +73,52 @@ const Purchase = () => {
                 <div className='p-12 grid lg:grid-cols-2 sm:grid-cols-1 gap-6 mx-auto'>
                     <div >
                         <p className='description text-cyan-700 text-base my-5'>
-                            <span className='font-semibold'>Product-Id: </span> {_id}
+                            <span className='font-semibold text-gray-700'>Product-Id: </span> {_id}
                         </p>
-                        <p className='description text-cyan-700 text-base my-5'>
+                        <p className='description text-gray-700 text-base my-5'>
                             <span className='font-semibold'>Description: </span> {description}
                         </p>
-                        <p className='description text-cyan-700 text-base my-5'>
-                            <span className='font-semibold'>Quanity: </span> <span id='quantity'>{quantity}</span>
+                        <p className='description text-gray-700 text-base my-5'>
+                            <span className='font-semibold'>Available: </span> <span id='quantity'>{available}</span>
                         </p>
-                        <p className='description text-base my-5 text-cyan-900'>
-                            <span className='font-semibold text-cyan-700'>Price: </span> {price}
+                        <p className='description text-gray-700 text-base my-5'>
+                            <span className='font-semibold'>Minimum Quantity For Order: </span>{quantity}
+                        </p>
+                        <p className='description text-base my-5 text-gray-700'>
+                            <span className='font-semibold'>Price: $</span>{price}
                         </p>
                     </div>
 
-                    <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm mx-auto">
-                        <form onSubmit={handleOrder} className='grid grid-cols-1 gap-4'>
-                            <input type="text" value={user.displayName} className=" w-full" />
-                            <input type="text" value={user.email} className="w-full" />
-                            <input type="text" name='phone' placeholder="Phone" className="w-full" required />
-                            <input type="text" name='address' placeholder="Shipping adderss" className="w-full" required />
-                            <div>
-                                <label className="my-2">Quantity</label>
-                                <input type="number" onBlur={searchQuantity} placeholder={quantity} className="w-full" />
+                    <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm mx-auto description">
+                        <form onSubmit={handleOrder}>
+                            <h1 className="secondary-title text-xl font-bold mt-8 mb-2 text-center text-cyan-600"><span className='text-gray-700'>Restock Product</span> {_id}</h1>
+                            <div className="form-group">
+                                <input className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none mb-2" type="text" value={user.displayName} />
+                                <input className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none mb-2" type="text" value={user.email} />
+                                <input className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none mb-2" type="text" name='phone' placeholder="Phone" required />
+                                <input className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none mb-2" type="text" name='address' placeholder="Shipping adderss" required />
                             </div>
-                            <div>
-                                <label className="mb-2">Total Price</label>
-                                <input type="text" value={totalPrice} className=" w-full text-2xl" />
+                            <div className='mb-2 flex justify-between items-center'>
+                                <p>Quantity:</p>
+                                <input className="form-control block w-3/4 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none" type="number" onBlur={searchQuantity} placeholder={quantity} />
                             </div>
-                            <input type="submit" value='Place Order' className="btn w-full" disabled={parseInt(orderQuantity) < parseInt(quantity) || parseInt(quantity) > parseInt(available) || quantity === ''} />
+                            <div className='mb-2'>
+                                <p>Total Price: {totalPrice}</p>
+                            </div>
+                            <button
+                                type="submit"
+                                data-mdb-ripple="true"
+                                data-mdb-ripple-color="light"
+                                class="w-full inline-block px-6 py-2.5 bg-cyan-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-700 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out" disabled={parseInt(inputQuantity) < parseInt(quantity) || parseInt(inputQuantity) > parseInt(available) || inputQuantity === ''}
+                            >Place Order</button>
                         </form>
                     </div>
+
+                </div>
+                <div className='flex space-x-2 justify-center'>
+                    <Link to="/allproducts">
+                        <button type="button" className="secondary-title inline-block px-6 py-2.5 bg-cyan-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-700 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out">All Products</button>
+                    </Link>
                 </div>
                 <div>
                 </div>
