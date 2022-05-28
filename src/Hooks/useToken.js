@@ -4,7 +4,8 @@ const useToken = user => {
     const [token, setToken] = useState('');
     useEffect(() => {
         const email = user?.user?.email;
-        const currentUser = { email: email };
+        const name = user?.user?.displayName;
+        const currentUser = { email: email, name: name };
         if (email) {
             fetch(`https://peaceful-taiga-28630.herokuapp.com/user/${email}`, {
                 method: 'PUT',

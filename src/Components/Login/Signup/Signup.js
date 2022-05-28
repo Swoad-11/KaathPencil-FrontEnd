@@ -53,7 +53,7 @@ const Signup = () => {
                             value: true,
                             message: 'Name is Required'
                         }
-                    })} name="name" id="" placeholder='Your Name' />
+                    })} name="name" placeholder='Your Name' />
                     <label htmlFor="Email" className="form-label inline-block mb-2 text-cyan-700">Email Address</label>
                     <input type="email" className='block mb-2 w-full px-3 py-1.5 text-base font-normal text-cyan-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-cyan-700 focus:bg-white focus:border-cyan-600 focus:outline-none' {...register("email", {
                         required: {
@@ -64,7 +64,7 @@ const Signup = () => {
                             value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
                             message: 'Provide a valid Email'
                         }
-                    })} name="email" id="" placeholder='Email Address' />
+                    })} name="email" placeholder='Email Address' />
                     <label htmlFor="Password" className="form-label inline-block mb-2 text-cyan-700">Password</label>
                     <input type="password" className='block mb-2 w-full px-3 py-1.5 text-base font-normal text-cyan-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-cyan-700 focus:bg-white focus:border-cyan-600 focus:outline-none' {...register("password", {
                         required: {
@@ -75,7 +75,7 @@ const Signup = () => {
                             value: 8,
                             message: 'Must be 8 characters or longer'
                         }
-                    })} name="password" id="" placeholder='Password' />
+                    })} name="password" placeholder='Password' />
                     <label className="label">
                         {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                         {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}

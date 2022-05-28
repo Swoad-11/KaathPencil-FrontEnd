@@ -58,14 +58,14 @@ const Purchase = () => {
                 <h1 className="secondary-title text-3xl font-bold mt-8 mb-2 text-center text-cyan-600">{name}</h1>
             </div>
             <div className='mx-auto p-8'>
-                <div className="flex flex-wrap justify-center">
+                <div className="flex flex-wrap justify-center ">
                     <img
                         src={image}
                         className="p-1 bg-white hover:scale-110 transition duration-300 ease-in-out border rounded-lg max-w-sm"
                         alt="..."
                     />
                 </div>
-                <div className='p-12 grid lg:grid-cols-2 sm:grid-cols-1 gap-6 mx-auto'>
+                <div className='p-12 grid lg:grid-cols-2 sm:grid-cols-1 gap-6 mx-aut items-center'>
                     <div >
                         <p className='description text-cyan-700 text-base my-5'>
                             <span className='font-semibold text-gray-700'>Product-Id: </span> {_id}

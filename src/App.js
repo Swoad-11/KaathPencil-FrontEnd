@@ -11,7 +11,7 @@ import Signup from './Components/Login/Signup/Signup';
 import About from './Components/About/About';
 import Portfolio from './Components/Portfolio/Portfolio';
 import AllProducts from './Components/AllProducts/AllProducts';
-import MyOrders from './Components/MyOrders/MyOrders';
+import MyOrders from './Components/Header/Dashboard/MyOrders/MyOrders';
 import Purchase from './Components/Purchase/Purchase';
 import AddItems from './Components/Header/Dashboard/AddItems/AddItems';
 import MyProfile from './Components/Header/Dashboard/MyProfile/MyProfile';
