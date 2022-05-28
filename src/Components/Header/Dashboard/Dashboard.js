@@ -15,6 +15,8 @@ const Dashboard = () => {
     const [user] = useAuthState(auth);
     const [admin] = useAdmin(user);
 
+    console.log(admin)
+
     return (
         <>
             {showSidebar ? (
@@ -38,14 +40,14 @@ const Dashboard = () => {
             >
                 <ul className="relative">
                     {
-                        user && <li className="relative">
-                            <p className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out font-semibold text-base rounded-lg text-black" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">{user.displayName}</p>
+                        <li className="relative">
+                            <p className="secondary-title text-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out font-semibold text-base rounded-lg text-black" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">{user.displayName}</p>
                         </li>
                     }
-                    {user && <>
-                        <li className="relative">
-                            <Link to="/myprofile" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">My Profile</Link>
-                        </li>
+                    <li className="relative">
+                        <Link to="/myprofile" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">My Profile</Link>
+                    </li>
+                    {!admin && <>
                         <li className="relative">
                             <Link to="/myorders" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">My Orders</Link>
                         </li>
@@ -56,13 +58,10 @@ const Dashboard = () => {
 
                     {admin && <>
                         <li className="relative">
-                            <Link to="/myprofile" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">My Profile</Link>
-                        </li>
-                        <li className="relative">
                             <Link to="/manageorders" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">Manage All Orders</Link>
                         </li>
                         <li className="relative">
-                            <Link to="/additem" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">Add A Product</Link>
+                            <Link to="/additems" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">Add A Product</Link>
                         </li>
                         <li className="relative">
                             <Link to="/makeadmin" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">Make Admin</Link>

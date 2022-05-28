@@ -13,6 +13,8 @@ import Portfolio from './Components/Portfolio/Portfolio';
 import AllProducts from './Components/AllProducts/AllProducts';
 import MyOrders from './Components/MyOrders/MyOrders';
 import Purchase from './Components/Purchase/Purchase';
+import AddItems from './Components/Header/Dashboard/AddItems/AddItems';
+import MyProfile from './Components/Header/Dashboard/MyProfile/MyProfile';
 
 function App() {
   return (
@@ -32,7 +34,9 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path='/about' element={<About></About>}></Route>
+        <Route path='/additems' element={<AddItems></AddItems>}></Route>
         <Route path='/allproducts' element={<AllProducts></AllProducts>}></Route>
+        <Route path='/myprofile' element={<MyProfile></MyProfile>}></Route>
         <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>

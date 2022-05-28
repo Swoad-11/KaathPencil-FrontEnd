@@ -11,9 +11,6 @@ const Purchase = () => {
     const [user] = useAuthState(auth);
     const [item] = useItemDetail(itemId);
     const { _id, name, image, description, price, available, quantity } = item;
-    const input = parseInt(inputQuantity);
-    const quantityAvailable = parseInt(available)
-    const minimumQuantity = parseInt(quantity);
 
     const totalPrice = parseInt(price) * inputQuantity;
 
@@ -25,7 +22,7 @@ const Purchase = () => {
     const handleOrder = event => {
         event.preventDefault();
         // const quantity = event.target.quantity.value;
-        const order = {
+        const purchase = {
             productId: _id,
             name: name,
             totalPrice,
@@ -35,25 +32,23 @@ const Purchase = () => {
             phone: event.target.phone.value,
             address: event.target.address.value
         };
-        console.log(order)
+        console.log(purchase)
 
-        // fetch('https://sheltered-cliffs-05732.herokuapp.com/order', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(order)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data)
-        //         if (data.success) {
-        //             toast('Successfully added!')
-        //         }
-
-
-        //         // refetch();
-        //     });
+        fetch('https://peaceful-taiga-28630.herokuapp.com/purchase', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(purchase)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data.success)
+                if (data.success) {
+                    toast('Product Successfully Added!');
+                }
+                //refetch();
+            });
     };
 
 
@@ -93,8 +88,8 @@ const Purchase = () => {
                         <form onSubmit={handleOrder}>
                             <h1 className="secondary-title text-xl font-bold mt-8 mb-2 text-center text-cyan-600"><span className='text-gray-700'>Restock Product</span> {_id}</h1>
                             <div className="form-group">
-                                <input className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none mb-2" type="text" value={user.displayName} />
-                                <input className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none mb-2" type="text" value={user.email} />
+                                <input className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none mb-2" type="text" defaultValue={user.displayName} />
+                                <input className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none mb-2" type="text" defaultValue={user.email} />
                                 <input className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none mb-2" type="text" name='phone' placeholder="Phone" required />
                                 <input className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none mb-2" type="text" name='address' placeholder="Shipping adderss" required />
                             </div>
@@ -109,7 +104,7 @@ const Purchase = () => {
                                 type="submit"
                                 data-mdb-ripple="true"
                                 data-mdb-ripple-color="light"
-                                class="w-full inline-block px-6 py-2.5 bg-cyan-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-700 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out" disabled={parseInt(inputQuantity) < parseInt(quantity) || parseInt(inputQuantity) > parseInt(available) || inputQuantity === ''}
+                                className="w-full inline-block px-6 py-2.5 bg-cyan-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-700 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out" disabled={parseInt(inputQuantity) < parseInt(quantity) || parseInt(inputQuantity) > parseInt(available) || inputQuantity === ''}
                             >Place Order</button>
                         </form>
                     </div>

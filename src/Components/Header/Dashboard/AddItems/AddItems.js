@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import auth from '../../firebase.init';
+import auth from '../../../../firebase.init';
+
 
 const AddItems = () => {
 
     const [user] = useAuthState(auth);
     const [item, setItem] = useState([])
-
+    console.log(user);
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
-        console.log(data);
-        const proceed = window.confirm("Are you sure , you want to add new item?");
+
+        const proceed = window.confirm("Are you sure , you want to add new product?");
         if (proceed) {
-            const url = 'https://shrouded-sands-14035.herokuapp.com/items';
+            const url = 'https://peaceful-taiga-28630.herokuapp.com/product';
             fetch(url, {
                 method: 'POST',
                 headers: {
@@ -34,7 +35,7 @@ const AddItems = () => {
     return (
         <div>
             <div>
-                <h1 className="secondary-title text-4xl font-bold mt-8 mb-5 text-center text-cyan-900">Add Items</h1>
+                <h1 className="secondary-title text-4xl font-bold mt-8 mb-5 text-center text-cyan-900">Add A Product</h1>
             </div>
             <div className="description block p-6 rounded-lg shadow-lg bg-white max-w-sm my-8 mx-auto border-2">
                 <form onSubmit={handleSubmit(onSubmit)}>
