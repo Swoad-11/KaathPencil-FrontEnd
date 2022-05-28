@@ -15,6 +15,8 @@ import MyOrders from './Components/MyOrders/MyOrders';
 import Purchase from './Components/Purchase/Purchase';
 import AddItems from './Components/Header/Dashboard/AddItems/AddItems';
 import MyProfile from './Components/Header/Dashboard/MyProfile/MyProfile';
+import MakeAdmin from './Components/Header/Dashboard/MakeAdmin/MakeAdmin';
+
 
 function App() {
   return (
@@ -37,6 +39,7 @@ function App() {
         <Route path='/additems' element={<AddItems></AddItems>}></Route>
         <Route path='/allproducts' element={<AllProducts></AllProducts>}></Route>
         <Route path='/myprofile' element={<MyProfile></MyProfile>}></Route>
+        <Route path='/makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
         <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
