@@ -49,32 +49,34 @@ const MyOrders = () => {
 
     };
     return (
-        <div>
-            <h3 className='text-3xl text-center mb-6'>My Order:{purchases.length}</h3>
+        <div className='p-8'>
+            <h3 className='secondary-title text-4xl font-bold mt-8 mb-5 text-center text-cyan-900'>My Order:{purchases.length}</h3>
             <div className="overflow-x-auto mx-3">
-                <table className="table table-compact w-full">
+                <table className="table table-compact w-full text-center">
                     <thead>
-                        <tr>
-                            <th>#</th>
-                            <th className='text-center'>Name</th>
-                            <th className='text-center'>Unite Price</th>
-                            <th className='text-center'>Quantity</th>
-                            <th className='text-center'>Total Price</th>
-                            <th className='text-center'>Pamayent Status</th>
-                            <th className='text-center'>Cencel Order</th>
+                        <tr className='border-b bg-cyan-800 secondary-title'>
+                            <th className='text-sm font-medium text-white px-6 py-4'>#</th>
+                            <th className='text-sm font-medium text-white px-6 py-4'>Name</th>
+                            <th className='text-sm font-medium text-white px-6 py-4'>Unite Price</th>
+                            <th className='text-sm font-medium text-white px-6 py-4'>Quantity</th>
+                            <th className='text-sm font-medium text-white px-6 py-4'>Total Price</th>
+                            <th className='text-sm font-medium text-white px-6 py-4'>Payment Status</th>
+                            <th className='text-sm font-medium text-white px-6 py-4'>Cancel Order</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            purchases.map((order, index) => <tr key={order._id}>
+                            purchases.map((order, index) => <tr className='bg-cyan-100 border-b secondary-title' key={order._id}>
                                 <th>{index + 1}</th>
                                 <td>{order.name}</td>
-                                <td className='text-center'>{order.price}</td>
-                                <td className='text-center'>{order.quantity}</td>
-                                <td className='text-center'>{order.totalPrice}</td>
-                                <td className='text-center'><Link to={`/dashboard/payment/${order._id}`}>
+                                <td className='text-sm font-medium px-6 py-4'>{order.price}</td>
+                                <td className='text-sm font-medium px-6 py-4'>{order.quantity}</td>
+                                <td className='text-sm font-medium px-6 py-4'>{order.totalPrice}</td>
+                                <td className='text-sm font-medium description px-6 py-4'><Link to={`/dashboard/payment/${order._id}`}>
                                     <button className="btn btn-xs btn-accent btn-outline">Pay Now</button> </Link></td>
-                                <td className='text-center'><button onClick={() => deleteOrder(order._id)} className="btn btn-xs btn-error btn-outline">Cencel</button></td>
+                                <td className='text-sm font-medium px-6 py-4'><button onClick={() => deleteOrder(order._id)} data-mdb-ripple="true"
+                                    data-mdb-ripple-color="light"
+                                    className="inline-block px-6 py-2.5 bg-teal-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-teal-700 hover:shadow-lg focus:bg-teal-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-teal-800 active:shadow-lg transition duration-150 ease-in-out">Cancel</button></td>
                             </tr>
                             )
                         }

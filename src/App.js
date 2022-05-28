@@ -16,6 +16,7 @@ import Purchase from './Components/Purchase/Purchase';
 import AddItems from './Components/Header/Dashboard/AddItems/AddItems';
 import MyProfile from './Components/Header/Dashboard/MyProfile/MyProfile';
 import MakeAdmin from './Components/Header/Dashboard/MakeAdmin/MakeAdmin';
+import ManageAllOrders from './Components/Header/Dashboard/ManageAllOrders/ManageAllOrders';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path='/about' element={<About></About>}></Route>
+        <Route path='/manageallorders' element={<ManageAllOrders></ManageAllOrders>}></Route>
         <Route path='/additems' element={<AddItems></AddItems>}></Route>
         <Route path='/allproducts' element={<AllProducts></AllProducts>}></Route>
         <Route path='/myprofile' element={<MyProfile></MyProfile>}></Route>

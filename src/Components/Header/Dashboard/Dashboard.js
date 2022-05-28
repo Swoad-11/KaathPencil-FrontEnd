@@ -60,7 +60,7 @@ const Dashboard = () => {
 
                     {admin && <>
                         <li className="relative">
-                            <Link to="/manageorders" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">Manage All Orders</Link>
+                            <Link to="/manageallorders" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">Manage All Orders</Link>
                         </li>
                         <li className="relative">
                             <Link to="/additems" className="secondary-title flex items-center py-4 px-6 h-12 overflow-hidden text-ellipsis whitespace-nowrap transition duration-300 ease-in-out text-base font-normal rounded-lg text-white hover:bg-cyan-800" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">Add A Product</Link>
