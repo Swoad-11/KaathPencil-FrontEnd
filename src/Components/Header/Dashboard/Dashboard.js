@@ -3,13 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket, faXmark } from '@fortawesome/free-solid-svg-icons';
 import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import useAdmin from '../../../Hooks/useAdmin';
 
 const Dashboard = () => {
     const [showSidebar, setShowSidebar] = useState(false);
+    const navigate = useNavigate();
     const handleSignOut = () => {
+        navigate('/home');
         signOut(auth);
     }
     const [user] = useAuthState(auth);

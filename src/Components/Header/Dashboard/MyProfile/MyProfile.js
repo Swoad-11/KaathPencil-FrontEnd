@@ -35,10 +35,10 @@ const MyProfile = () => {
                 <h1 className="secondary-title text-4xl font-bold mt-8 mb-5 text-center text-cyan-900">My Profile</h1>
             </div>
             <div className='p-12'>
-                <div class="flex justify-center">
-                    <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
-                        <h5 class="text-gray-900 text-xl font-semibold leading-tight font-medium mb-2">Name: <span className='text-cyan-600'>{user.displayName}</span></h5>
-                        <p class="text-gray-700 text-base mb-4">
+                <div className="flex justify-center">
+                    <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
+                        <h5 className="text-gray-900 text-xl font-semibold leading-tight font-medium mb-2">Name: <span className='text-cyan-600'>{user.displayName}</span></h5>
+                        <p className="text-gray-700 text-base mb-4">
                             E-Mail: <span className='text-cyan-600'>{user.email}</span>
                         </p>
                     </div>
