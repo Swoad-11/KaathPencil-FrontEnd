@@ -68,7 +68,7 @@ const MyOrders = () => {
                         {
                             purchases.map((order, index) => <tr className='bg-cyan-100 border-b secondary-title' key={order._id}>
                                 <th>{index + 1}</th>
-                                <td>{order.name}</td>
+                                <td className='text-sm font-medium px-6 py-4'>{order.name}</td>
                                 <td className='text-sm font-medium px-6 py-4'>{order.price}</td>
                                 <td className='text-sm font-medium px-6 py-4'>{order.quantity}</td>
                                 <td className='text-sm font-medium px-6 py-4'>{order.totalPrice}</td>

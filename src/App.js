@@ -17,6 +17,7 @@ import AddItems from './Components/Header/Dashboard/AddItems/AddItems';
 import MyProfile from './Components/Header/Dashboard/MyProfile/MyProfile';
 import MakeAdmin from './Components/Header/Dashboard/MakeAdmin/MakeAdmin';
 import ManageAllOrders from './Components/Header/Dashboard/ManageAllOrders/ManageAllOrders';
+import ManageProducts from './Components/Header/Dashboard/ManageProducts/ManageProducts';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         }></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/manageallorders' element={<ManageAllOrders></ManageAllOrders>}></Route>
+        <Route path='/manageproducts' element={<ManageProducts></ManageProducts>}></Route>
         <Route path='/additems' element={<AddItems></AddItems>}></Route>
         <Route path='/allproducts' element={<AllProducts></AllProducts>}></Route>
         <Route path='/myprofile' element={<MyProfile></MyProfile>}></Route>

@@ -66,11 +66,11 @@ const ManageAllOrders = () => {
                                 <td className='text-sm font-medium description  px-6 py-4'>{order.email}</td>
                                 <td className='text-sm font-medium description  px-6 py-4'>{order.name}</td>
                                 <td className='text-sm font-medium  px-6 py-4'>Pending</td>
-                                <td className='text-sm font-medium  px-6 py-4'><button onClick={() => handlePayment(order._id)} type="button"
+                                <td className='text-sm font-medium  px-6 py-4'><button onClick={() => handlePayment(order._id)}
                                     data-mdb-ripple="true"
                                     data-mdb-ripple-color="light"
                                     className="inline-block px-6 py-2.5 bg-teal-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-teal-700 hover:shadow-lg focus:bg-teal-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-teal-800 active:shadow-lg transition duration-150 ease-in-out">Pending</button></td>
-                                <td className='text-sm font-medium px-6 py-4'><button onClick={() => orderCencel(order._id)} type="button"
+                                <td className='text-sm font-medium px-6 py-4'><button onClick={() => orderCencel(order._id)}
                                     data-mdb-ripple="true"
                                     data-mdb-ripple-color="light"
                                     className="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">Cancel</button></td>
