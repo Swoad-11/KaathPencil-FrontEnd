@@ -68,13 +68,13 @@ const MyOrders = () => {
                         {
                             purchases.map((order, index) => <tr className='bg-cyan-100 border-b secondary-title' key={order._id}>
                                 <th>{index + 1}</th>
-                                <td className='text-sm font-medium px-6 py-4'>{order.name}</td>
-                                <td className='text-sm font-medium px-6 py-4'>{order.price}</td>
-                                <td className='text-sm font-medium px-6 py-4'>{order.quantity}</td>
-                                <td className='text-sm font-medium px-6 py-4'>{order.totalPrice}</td>
-                                <td className='text-sm font-medium description px-6 py-4'><Link to={`/dashboard/payment/${order._id}`}>
+                                <td className=' font-medium px-6 py-4'>{order.name}</td>
+                                <td className=' font-medium px-6 py-4'>{order.price}</td>
+                                <td className=' font-medium px-6 py-4'>{order.quantity}</td>
+                                <td className=' font-medium px-6 py-4'>{order.totalPrice}</td>
+                                <td className=' font-medium description px-6 py-4'><Link to={`/dashboard/payment/${order._id}`}>
                                     <button className="btn btn-xs btn-accent btn-outline">Pay Now</button> </Link></td>
-                                <td className='text-sm font-medium px-6 py-4'><button onClick={() => deleteOrder(order._id)} data-mdb-ripple="true"
+                                <td className=' font-medium px-6 py-4'><button onClick={() => deleteOrder(order._id)} data-mdb-ripple="true"
                                     data-mdb-ripple-color="light"
                                     className="inline-block px-6 py-2.5 bg-teal-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-teal-700 hover:shadow-lg focus:bg-teal-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-teal-800 active:shadow-lg transition duration-150 ease-in-out">Cancel</button></td>
                             </tr>

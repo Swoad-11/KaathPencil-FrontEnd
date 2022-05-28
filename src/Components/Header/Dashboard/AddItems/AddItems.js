@@ -7,7 +7,7 @@ import auth from '../../../../firebase.init';
 const AddItems = () => {
 
     const [user] = useAuthState(auth);
-    const [item, setItem] = useState([])
+    const [item, setItem] = useState([]);
     console.log(user);
     const { register, handleSubmit } = useForm();
 

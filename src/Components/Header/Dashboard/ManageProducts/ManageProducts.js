@@ -42,16 +42,16 @@ const ManageProducts = () => {
                         {
                             products.map((product, index) => <tr className='bg-cyan-100 border-b secondary-title' key={product._id}>
                                 <th>{index + 1}</th>
-                                <td className='text-sm font-medium px-6 py-4'>{product.name}</td>
-                                <td className='text-sm font-medium px-6 py-4'>
+                                <td className=' font-medium px-6 py-4'>{product.name}</td>
+                                <td className=' font-medium px-6 py-4'>
                                     <div class="avatar">
                                         <div>
                                             <img className='rounded-lg w-24 mx-auto' src={product.image} alt="" />
                                         </div>
                                     </div>
                                 </td>
-                                <td className='text-sm font-medium px-6 py-4 description'>{product._id}</td>
-                                <td className='text-center text-sm font-medium px-6 py-4 description'><button onClick={() => deleteProduct(product._id)} data-mdb-ripple="true"
+                                <td className=' font-medium px-6 py-4 description'>{product._id}</td>
+                                <td className='text-center font-medium px-6 py-4 description'><button onClick={() => deleteProduct(product._id)} data-mdb-ripple="true"
                                     data-mdb-ripple-color="light"
                                     className="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">Delete</button></td>
                             </tr>

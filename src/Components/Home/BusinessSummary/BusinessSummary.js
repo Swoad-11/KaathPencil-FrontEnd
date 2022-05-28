@@ -15,7 +15,7 @@ const BusinessSummary = () => {
                 <div className="flex justify-center">
                     <div className="block rounded-lg shadow-lg bg-cyan-100 hover:bg-cyan-200 w-full text-center ">
                         <div className="py-3">
-                            <p className=" text-cyan-700 text-center text-5xl mt-4 mb-1 font-bold secondary-title">
+                            <p className=" text-cyan-700 text-center text-4xl mt-4 mb-1 font-bold secondary-title">
                                 <FontAwesomeIcon className='text-green-500' icon={faSackDollar} /> 70M+
                             </p>
                         </div>
@@ -27,7 +27,7 @@ const BusinessSummary = () => {
                 <div className="flex justify-center">
                     <div className="block rounded-lg shadow-lg bg-cyan-100 hover:bg-cyan-200 w-full text-center ">
                         <div className="py-3">
-                            <p className=" text-cyan-700 text-center text-5xl mt-4 mb-1 font-bold secondary-title">
+                            <p className=" text-cyan-700 text-center text-4xl mt-4 mb-1 font-bold secondary-title">
                                 <FontAwesomeIcon className='text-rose-400' icon={faHeart} /> 33K+
                             </p>
                         </div>
@@ -39,7 +39,7 @@ const BusinessSummary = () => {
                 <div className="flex justify-center">
                     <div className="block rounded-lg shadow-lg bg-cyan-100 hover:bg-cyan-200 w-full text-center ">
                         <div className="py-3">
-                            <p className=" text-cyan-700 text-center text-5xl mt-4 mb-1 font-bold secondary-title">
+                            <p className=" text-cyan-700 text-center text-4xl mt-4 mb-1 font-bold secondary-title">
                                 <FontAwesomeIcon className='text-blue-400' icon={faPenRuler} /> Customers
                             </p>
                         </div>
@@ -51,7 +51,7 @@ const BusinessSummary = () => {
                 <div className="flex justify-center">
                     <div className="block rounded-lg shadow-lg bg-cyan-100 hover:bg-cyan-200 w-full text-center ">
                         <div className="py-3">
-                            <p className=" text-cyan-700 text-center text-5xl mt-4 mb-1 font-bold secondary-title">
+                            <p className=" text-cyan-700 text-center text-4xl mt-4 mb-1 font-bold secondary-title">
                                 <FontAwesomeIcon className='text-teal-700' icon={faEarth} /> 50+
                             </p>
                         </div>
